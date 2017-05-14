@@ -1,10 +1,12 @@
 package com.example.daniel.smartfest;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
@@ -17,7 +19,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-public class Register extends AppCompatActivity {
+public class Register extends Activity {
 
     private EditText name;
     private EditText email;
@@ -37,7 +39,6 @@ public class Register extends AppCompatActivity {
 
         mAuth =FirebaseAuth.getInstance();
 
-        name=(EditText)findViewById(R.id.name);
         email=(EditText)findViewById(R.id.email);
         password=(EditText)findViewById(R.id.pass);
         TextView back=(TextView)findViewById(R.id.back);
@@ -55,6 +56,12 @@ public class Register extends AppCompatActivity {
 
     public void reg(View v)
     {
+        if(TextUtils.isEmpty(email.getText().toString()) || TextUtils.isEmpty(password.getText().toString()))
+        {
+            Toast.makeText(Register.this, "Fields are empty!", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
         final ProgressDialog progressDialog= ProgressDialog.show(Register.this,"Please wait...", "Processing...", true);
         mAuth.createUserWithEmailAndPassword(email.getText().toString(),password.getText().toString())
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -63,18 +70,18 @@ public class Register extends AppCompatActivity {
                                                progressDialog.dismiss();
                                                if(task.isSuccessful())
                                                {
-                                                   Toast.makeText(Register.this,"Registration successful!",Toast.LENGTH_LONG).show();
+                                                   Toast.makeText(Register.this,"Registration successful!",Toast.LENGTH_SHORT).show();
                                                    Intent log=new Intent(Register.this, MainActivity.class);
                                                    startActivity(log);
                                                }
                                                else
                                                {
-                                                   Toast.makeText(Register.this,"Please try again!",Toast.LENGTH_LONG).show();
+                                                   Toast.makeText(Register.this,"Please try again!",Toast.LENGTH_SHORT).show();
                                                }
                                            }
 
                                        }
                 );
 
-    }
+    }}
 }

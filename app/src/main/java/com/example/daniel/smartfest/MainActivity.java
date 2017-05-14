@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -50,6 +51,11 @@ public class MainActivity extends Activity {
     public void login(View v)
     {
 
+        if(TextUtils.isEmpty(email.getText().toString()) || TextUtils.isEmpty(password.getText().toString()))
+        {
+            Toast.makeText(MainActivity.this, "Fields are empty! ", Toast.LENGTH_SHORT).show();
+        }
+        else{
        final ProgressDialog progressDialog= ProgressDialog.show(MainActivity.this,"Please wait...", "Processing...", true);
          mAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -58,13 +64,13 @@ public class MainActivity extends Activity {
                        progressDialog.dismiss();
                        if(task.isSuccessful())
                        {
-                           Toast.makeText(MainActivity.this,"Login successful!",Toast.LENGTH_LONG).show();
+                           Toast.makeText(MainActivity.this,"Login successful!",Toast.LENGTH_SHORT).show();
                            Intent log =new Intent(MainActivity.this, FirstPage.class);
                            startActivity(log);
                        }
                        else
                        {
-                           Toast.makeText(MainActivity.this,"Please try again!",Toast.LENGTH_LONG).show();
+                           Toast.makeText(MainActivity.this,"Please try again!",Toast.LENGTH_SHORT).show();
                        }
                    }
                });
@@ -73,5 +79,6 @@ public class MainActivity extends Activity {
 
 
 
+    }
     }
 }
