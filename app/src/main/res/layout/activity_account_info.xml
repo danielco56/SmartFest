@@ -1,9 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.daniel.smartfest.AccountInfo">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="55dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email:"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="italic"
+            android:layout_height="wrap_content"
+            android:background="#E0E0E0"
+            android:id="@+id/pass"
+            android:ems="10"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:layout_marginTop="7dp"
+            />
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_gravity="center"
+            android:textStyle="italic"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textEmailAddress"
+            android:id="@+id/name"
+            android:background="#E0E0E0"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:layout_width="100dp"
+            android:layout_gravity="center"
+            android:textStyle="italic"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:hint="Age"
+            android:inputType="textEmailAddress"
+            android:id="@+id/age"
+            android:background="#E0E0E0"
+            android:layout_marginTop="10dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gender:"
+            android:textAlignment="center"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:id="@+id/male"
+
+           />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:id="@+id/female"
+            android:layout_toRightOf="@+id/male"
+            android:textAlignment="center"
+            />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/male"
+            android:id="@+id/maleR"
+            android:layout_marginLeft="10dp"
+           />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/female"
+            android:layout_marginLeft="67dp"
+            />
+        </RelativeLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="50dp"
+            android:background="@android:color/white"
+            android:textSize="15dp"
+            android:textColor="#E65100"
+            android:text="SAVE"
+            android:onClick="save"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="5dp"
+            android:id="@+id/save"
+            />
+
+    </LinearLayout>
+</ScrollView>

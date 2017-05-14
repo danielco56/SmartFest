@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
 
     private FirebaseAuth mAuth;
     private ProgressDialog progressDialog;
-    private EditText email;
+    public EditText email;
     private EditText password;
 
     @Override
