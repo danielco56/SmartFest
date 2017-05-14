@@ -43,7 +43,7 @@
             android:background="@android:color/white"
             android:textSize="15dp"
             android:textColor="#E65100"
-            android:text="Next"
+            android:text="Back"
             android:id="@+id/next"
             android:textAlignment="center"
             android:layout_marginTop="35dp"
