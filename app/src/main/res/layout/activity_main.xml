@@ -26,7 +26,7 @@
             android:ems="10"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:id="@+id/username"
+            android:id="@+id/email"
             android:background="#E0E0E0"
             android:layout_marginTop="41dp"/>
 
@@ -36,7 +36,7 @@
             android:textStyle="italic"
             android:layout_height="50dp"
             android:background="#E0E0E0"
-            android:id="@+id/password"
+            android:id="@+id/pass"
             android:ems="10"
             android:inputType="textPassword"
             android:layout_marginTop="7dp"
@@ -50,6 +50,7 @@
             android:textSize="15dp"
             android:textColor="#E65100"
             android:text="LOGIN"
+            android:onClick="login"
             android:layout_marginTop="15dp"
             android:layout_marginRight="5dp"
             android:id="@+id/login"

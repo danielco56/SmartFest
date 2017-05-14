@@ -63,13 +63,13 @@ public class Register extends AppCompatActivity {
                                                progressDialog.dismiss();
                                                if(task.isSuccessful())
                                                {
-                                                   Toast.makeText(Register.this,"Merge FMM",Toast.LENGTH_LONG).show();
+                                                   Toast.makeText(Register.this,"Registration successful!",Toast.LENGTH_LONG).show();
                                                    Intent log=new Intent(Register.this, MainActivity.class);
                                                    startActivity(log);
                                                }
                                                else
                                                {
-                                                   Toast.makeText(Register.this,"Nu merge",Toast.LENGTH_LONG).show();
+                                                   Toast.makeText(Register.this,"Please try again!",Toast.LENGTH_LONG).show();
                                                }
                                            }
 
