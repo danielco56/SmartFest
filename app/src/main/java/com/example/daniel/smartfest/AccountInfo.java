@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 
 import com.example.daniel.smartfest.com.example.daniel.smartfest.services.UserInformation;
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,6 +19,8 @@ public class AccountInfo extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private EditText names;
     private EditText ages;
+    private RadioButton maler;
+    private RadioButton femaler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +39,11 @@ public class AccountInfo extends AppCompatActivity {
     {
         String nameS=names.getText().toString().trim();
         String ageS=ages.getText().toString().trim();
-
         UserInformation userInformation = new UserInformation(nameS, ageS);
 
         FirebaseUser user=firebaseAuth.getCurrentUser();
         databaseReference.child(user.getUid()).setValue(userInformation);
     }
+
+
 }
