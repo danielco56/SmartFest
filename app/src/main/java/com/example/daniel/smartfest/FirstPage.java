@@ -36,6 +36,15 @@ public class FirstPage extends Activity {
         ImageView clickAici = (ImageView) findViewById(R.id.clickAici);
         ImageView account = (ImageView) findViewById(R.id.account);
         ImageView balanta = (ImageView) findViewById(R.id.Balanta);
+        ImageView plateste = (ImageView) findViewById(R.id.plateste);
+
+        plateste.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent plateste = new Intent(FirstPage.this, PaymentMethod.class);
+                startActivity(plateste);
+            }
+        });
 
 
         account.setOnClickListener(new View.OnClickListener() {
