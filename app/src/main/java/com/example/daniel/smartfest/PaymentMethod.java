@@ -29,7 +29,7 @@ public class PaymentMethod extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_method);
 
-        m_response = (TextView) findViewById(R.id.response);
+
 
         m_configuration = new PayPalConfiguration()
                 .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX) // sandbox for test, production for real

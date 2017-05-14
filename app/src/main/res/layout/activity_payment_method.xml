@@ -13,15 +13,19 @@
         android:layout_height="wrap_content"
         android:text="Pay with PayPal"
         android:layout_centerInParent="true"
-        android:textSize="30sp"
+        android:textSize="20sp"
+        android:background="@android:color/white"
+        android:id="@+id/with"
         android:onClick="pay"
         />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/response"
-        android:textSize="30sp"/>
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_toLeftOf="@+id/with"
+        android:layout_centerInParent="true"
+        android:src="@drawable/download"
+        android:layout_marginRight="10dp"/>
 
 
 </RelativeLayout>
