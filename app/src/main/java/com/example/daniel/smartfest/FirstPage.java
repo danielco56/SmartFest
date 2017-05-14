@@ -114,7 +114,7 @@ public class FirstPage extends Activity {
                 displayPrice(scor1 * 7+scor);
                 scor=scor1*7+scor;
             }
-            if(numar.equals("Cola") && numar.equals("Fanta") && numar.equals("Tuborg")){
+            if(numar.equals("Cola") || numar.equals("Fanta") || numar.equals("Tuborg")){
                 int i=0;
                 i++;
             }else
