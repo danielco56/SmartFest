@@ -20,7 +20,7 @@ public class PaymentMethod extends AppCompatActivity
 
     PayPalConfiguration m_configuration;
     // the id is the link to the paypal account, we have to create an app and get its id
-    String m_paypalClientId ;
+    String m_paypalClientId ="AUekxf3GDMWcMQVJwTQXMn6OVZL5uiiL7feAtc3_ZxLjfS6Wg4qL7nMcoRcSB10Jpniql277H6j7CIJl";
     Intent m_service;
     int m_paypalRequestCode = 999; // or any number you want
 

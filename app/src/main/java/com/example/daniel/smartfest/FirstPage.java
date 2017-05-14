@@ -83,11 +83,13 @@ public class FirstPage extends Activity {
         });
     }
 
-    public  void display ( int number){
+    private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.total);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
-    public int scor = 0, scor1 = 0;
+
+    public int scor = 0, scor1=1;
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -98,10 +100,20 @@ public class FirstPage extends Activity {
             // adaugi in lista ce trebuie, fara sa stearga din lista.
             StaticDataService.List.add(result.getContents());
             Collections.reverse(StaticDataService.List);
-            if (result.getContents() == "Cola") {
-                scor = scor + 1;
-                scor1 = scor1 + scor;
-                display(scor*5);
+            String numar= result.getContents();
+            if ( numar.equals("Cola") ) {
+                displayPrice(scor1 * 5+scor);
+                scor=scor1*5;
+            }
+
+            if ( numar.equals("Fanta") ) {
+                displayPrice(scor1 * 4+scor);
+                scor=scor1*4+scor;
+            }
+
+            if ( numar.equals("Tuborg") ) {
+                displayPrice(scor1 * 7+scor);
+                scor=scor1*7+scor;
             }
 
 
