@@ -94,7 +94,6 @@ public class FirstPage extends Activity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        // golim lista ca sa nu ti se mentina datele de la o rulare la alta
 
         if (result != null) {
             // adaugi in lista ce trebuie, fara sa stearga din lista.
@@ -104,16 +103,25 @@ public class FirstPage extends Activity {
             if ( numar.equals("Cola") ) {
                 displayPrice(scor1 * 5+scor);
                 scor=scor1*5;
+            }else
+            {
+                Toast.makeText(this,"Nu exista acest produs", Toast.LENGTH_LONG).show();
             }
 
             if ( numar.equals("Fanta") ) {
                 displayPrice(scor1 * 4+scor);
                 scor=scor1*4+scor;
+            }else
+            {
+                Toast.makeText(this,"Nu exista acest produs", Toast.LENGTH_LONG).show();
             }
 
             if ( numar.equals("Tuborg") ) {
                 displayPrice(scor1 * 7+scor);
                 scor=scor1*7+scor;
+            }else
+            {
+                Toast.makeText(this,"Nu exista acest produs", Toast.LENGTH_LONG).show();
             }
 
 
