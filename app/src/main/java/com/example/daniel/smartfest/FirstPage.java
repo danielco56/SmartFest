@@ -103,27 +103,24 @@ public class FirstPage extends Activity {
             if ( numar.equals("Cola") ) {
                 displayPrice(scor1 * 5+scor);
                 scor=scor1*5;
-            }else
-            {
-                Toast.makeText(this,"Nu exista acest produs", Toast.LENGTH_LONG).show();
             }
 
             if ( numar.equals("Fanta") ) {
                 displayPrice(scor1 * 4+scor);
                 scor=scor1*4+scor;
-            }else
-            {
-                Toast.makeText(this,"Nu exista acest produs", Toast.LENGTH_LONG).show();
             }
 
             if ( numar.equals("Tuborg") ) {
                 displayPrice(scor1 * 7+scor);
                 scor=scor1*7+scor;
+            }
+            if(numar.equals("Cola") && numar.equals("Fanta") && numar.equals("Tuborg")){
+                int i=0;
+                i++;
             }else
             {
-                Toast.makeText(this,"Nu exista acest produs", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Nu exista acest produs", Toast.LENGTH_SHORT).show();
             }
-
 
 
             if (result != null) {
