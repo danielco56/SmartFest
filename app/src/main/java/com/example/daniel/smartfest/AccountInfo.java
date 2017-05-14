@@ -34,7 +34,7 @@ public class AccountInfo extends AppCompatActivity {
         ages =(EditText)findViewById(R.id.age);
 
     }
-
+//
     public void save(View v)
     {
         String nameS=names.getText().toString().trim();
