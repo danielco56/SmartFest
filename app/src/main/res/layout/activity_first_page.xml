@@ -9,20 +9,35 @@
     >
 
     <ImageView
-        android:layout_width="40sp"
-        android:layout_height="40sp"
-        android:src="@drawable/userfaced"
-        android:layout_margin="10dp"
-        android:layout_alignParentLeft="true"
-        android:id="@+id/account"/>
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:src="@drawable/user"
+        android:layout_toRightOf="@+id/plateste"
+        android:id="@+id/account"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="100dp"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/account"
+        android:textSize="25dp"
+        android:text="Account"
+        android:layout_toRightOf="@id/plateste"
+        android:layout_marginLeft="23sp"
+        />
+
+
 
 
     <ImageView
         android:layout_width="100sp"
         android:layout_height="100sp"
         android:src="@drawable/balance"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="250dp"
         android:id="@+id/Balanta"
         />
 
@@ -30,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Balanta"
-        android:layout_marginLeft="87dp"
+        android:layout_marginLeft="74dp"
         android:text="Balance"
         android:textSize="25dp"/>
 
@@ -39,7 +54,7 @@
         android:layout_height="100sp"
         android:src="@drawable/scan"
         android:layout_toRightOf="@+id/Balanta"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="250dp"
         android:id="@+id/clickAici"
         android:layout_marginLeft="20dp"/>
 
@@ -56,8 +71,8 @@
         android:layout_width="100sp"
         android:layout_height="100sp"
         android:src="@drawable/payment2"
-        android:layout_marginTop="140dp"
-        android:layout_marginLeft="80sp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="70sp"
         android:id="@+id/plateste"/>
 
     <TextView
@@ -66,12 +81,32 @@
         android:layout_below="@+id/plateste"
         android:text="Payment "
         android:textSize="25dp"
-        android:layout_marginLeft="77sp"
+        android:id="@+id/platesteunu"
+        android:layout_marginLeft="68sp"
         />
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Total expenses: "
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="30dp"
+        android:id="@+id/total"
 
+        />
 
 
 </RelativeLayout>

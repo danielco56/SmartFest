@@ -21,6 +21,7 @@ import com.google.zxing.integration.android.IntentResult;
 
 import org.w3c.dom.Text;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -82,30 +83,43 @@ public class FirstPage extends Activity {
         });
     }
 
+    public  void display ( int number){
+        TextView priceTextView = (TextView) findViewById(R.id.total);
+        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+    }
+    public int scor = 0, scor1 = 0;
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         // golim lista ca sa nu ti se mentina datele de la o rulare la alta
 
-        if(result!= null) {
+        if (result != null) {
             // adaugi in lista ce trebuie, fara sa stearga din lista.
             StaticDataService.List.add(result.getContents());
-            Collections.reverse(StaticDataService.List);//
-        }
-        if(result != null){
-            if(result.getContents()==null){
-                Toast.makeText(this,"Ai anulat scanarea", Toast.LENGTH_LONG).show();
+            Collections.reverse(StaticDataService.List);
+            if (result.getContents() == "Cola") {
+                scor = scor + 1;
+                scor1 = scor1 + scor;
+                display(scor*5);
             }
-            else {
-                Toast.makeText(this, result.getContents(),Toast.LENGTH_LONG).show();
-            }
-        }
-        else {
-            super.onActivityResult(requestCode , resultCode, data);
-        }
 
 
+
+            if (result != null) {
+                if (result.getContents() == null) {
+                    Toast.makeText(this, "Ai anulat scanarea", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
+                }
+            } else {
+                super.onActivityResult(requestCode, resultCode, data);
+            }
+
+
+
+
+        }
 
     }
 }
