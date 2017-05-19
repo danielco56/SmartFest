@@ -51,7 +51,7 @@ public class FirstPage extends Activity {
         account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent account = new Intent(FirstPage.this, AccountInfo.class);
+                Intent account = new Intent(FirstPage.this, AccountInfo2.class);
                 startActivity(account);
             }
         });

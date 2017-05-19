@@ -7,15 +7,16 @@ package com.example.daniel.smartfest.com.example.daniel.smartfest.services;
 public class UserInformation {
     public String name;
     public String age;
-
+    public String gen;
     public UserInformation()
     {
 
     }
-    public UserInformation(String name, String age)
+    public UserInformation(String name, String age, String gen)
     {
         this.name=name;
         this.age=age;
+        this.gen=gen;
 
     }
 }

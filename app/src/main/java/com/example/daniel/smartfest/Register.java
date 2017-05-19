@@ -22,10 +22,9 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Register extends Activity {
 
-    private EditText name;
     private EditText email;
     private EditText password;
-    private ProgressDialog progressDialog;
+
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -35,12 +34,6 @@ public class Register extends Activity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_register);
-
-        Button next = (Button) findViewById(R.id.next);
-
-
-
-        progressDialog =new ProgressDialog(this);
 
         mAuth =FirebaseAuth.getInstance();
 
@@ -68,16 +61,13 @@ public class Register extends Activity {
         }
         else
         {
-        final ProgressDialog progressDialog= ProgressDialog.show(Register.this,"Please wait...", "Processing...", true);
         mAuth.createUserWithEmailAndPassword(email.getText().toString(),password.getText().toString())
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                            @Override
                                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                               progressDialog.dismiss();
                                                if(task.isSuccessful())
                                                {
-                                                   Toast.makeText(Register.this,"Registration successful!",Toast.LENGTH_SHORT).show();
-                                                   Intent log=new Intent(Register.this, MainActivity.class);
+                                                   Intent log=new Intent(Register.this, AccountInfo.class);
                                                    startActivity(log);
                                                }
                                                else

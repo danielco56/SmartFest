@@ -14,25 +14,6 @@
         android:layout_marginTop="55dp">
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Email:"
-            android:textAlignment="center"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_gravity="center"
-            android:textStyle="italic"
-            android:layout_height="wrap_content"
-            android:background="#E0E0E0"
-            android:id="@+id/pass"
-            android:ems="10"
-            android:textAlignment="center"
-            android:textSize="25sp"
-            android:layout_marginTop="7dp"
-            />
-
-        <EditText
             android:layout_width="250dp"
             android:layout_gravity="center"
             android:textStyle="italic"
@@ -54,6 +35,37 @@
             android:id="@+id/age"
             android:background="#E0E0E0"
             android:layout_marginTop="10dp"/>
+       <LinearLayout
+           android:layout_marginTop="20dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_gravity="center">
+
+       </LinearLayout>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/rgrup"
+            android:layout_gravity="center">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                android:layout_marginRight="20dp"
+                android:id="@+id/male"
+                android:onClick="rbCLICK"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Female"
+                android:id="@+id/female"
+                android:onClick="rbCLICK"/>
+
+        </RadioGroup>
 
 
         <Button

@@ -11,8 +11,8 @@ public class AccountInfo2 extends AppCompatActivity {
     private TextView Name;
     private TextView Email;
     private TextView Age;
-    private FirebaseDatabase mRef;
 
+    private Firebase mRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
