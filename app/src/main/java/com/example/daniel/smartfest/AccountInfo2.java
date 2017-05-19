@@ -12,7 +12,7 @@ public class AccountInfo2 extends AppCompatActivity {
     private TextView Email;
     private TextView Age;
 
-    private Firebase mRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
