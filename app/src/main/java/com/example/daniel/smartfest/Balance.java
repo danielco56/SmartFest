@@ -21,8 +21,10 @@ public class Balance extends AppCompatActivity {
 
         ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listFromFirstPage);
 
+
         GridView listView = (GridView) findViewById(R.id.list);
 
         listView.setAdapter(itemsAdapter);
+
     }
 }

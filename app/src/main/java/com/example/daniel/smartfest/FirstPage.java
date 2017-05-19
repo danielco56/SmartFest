@@ -2,14 +2,8 @@ package com.example.daniel.smartfest;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.media.Image;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,14 +13,12 @@ import com.example.daniel.smartfest.com.example.daniel.smartfest.services.Static
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
-import org.w3c.dom.Text;
-
+import java.text.DateFormat;
 import java.text.NumberFormat;
-import java.util.ArrayList;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Collections;
-import java.util.List;
 
-import static android.R.attr.data;
 public class FirstPage extends Activity {
 
     @Override
@@ -90,15 +82,25 @@ public class FirstPage extends Activity {
 
     public int scor = 0, scor1=1;
 
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
 
         if (result != null) {
-            // adaugi in lista ce trebuie, fara sa stearga din lista.
+
+
+            //data
+            DateFormat df = new SimpleDateFormat("d MMM yyyy, HH:mm:ss");
+            String date = df.format(Calendar.getInstance().getTime());
+
+            // adaug in lista ce s-a scanat si dupa data
+            StaticDataService.List.add(date);
             StaticDataService.List.add(result.getContents());
+
+            // afiseaza invers
             Collections.reverse(StaticDataService.List);
+
+
             String numar= result.getContents();
             if ( numar.equals("Cola") ) {
                 displayPrice(scor1 * 5+scor);

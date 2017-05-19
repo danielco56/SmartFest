@@ -39,17 +39,10 @@ public class Register extends Activity {
 
         email=(EditText)findViewById(R.id.email);
         password=(EditText)findViewById(R.id.pass);
-        TextView back=(TextView)findViewById(R.id.back);
 
 
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent back= new Intent(Register.this, MainActivity.class);
-                startActivity(back);
-            }
-        });
+
     }
 
 
@@ -80,4 +73,10 @@ public class Register extends Activity {
                 );
 
     }}
+
+    public void log(View v)
+    {
+        Intent logg=new Intent(Register.this, MainActivity.class);
+        startActivity(logg);
+    }
 }
