@@ -28,10 +28,12 @@
             android:name=".PaymentMethod"
             android:label="Payment Method" />
         <activity
-            android:name=".AccountInfo"
-            android:label="Account Informations" />
+            android:name=".AccountInfo"/>
         <activity android:name=".Register" />
-        <activity android:name=".MoreInformations"></activity>
+        <activity android:name=".MoreInformations" />
+        <activity
+            android:name=".Informations"
+            android:label="Account Informations"></activity>
     </application>
 
 </manifest>
